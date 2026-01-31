@@ -1,0 +1,27 @@
+.top-header .container{
+    @apply flex items-center justify-between py-[15px] px-0 mx-auto;
+}
+.logo{
+    @apply w-40
+}
+.search-box{
+   @apply w-125 flex items-center bg-bg border-solid border-main border rounded-[30px]
+}
+.search{
+    @apply h-11.25 w-110 p-[5px_15px_5px_20px] bg-bg rounded-[30px_0_0_30px]
+}
+.search-box button{
+    @apply h-11.25 w-15 bg-main flex cursor-pointer rounded-[0_30px_30px_0] justify-center items-center
+}
+.search-box button svg{
+    @apply w-6 h-6 text-whitee
+}
+.header-icons .icon{
+    @apply cursor-pointer relative
+}
+.header-icons .icon svg{
+    @apply text-[30px]
+}
+.count{
+    @apply absolute top-[-5px] right-[-10px] bg-main text-whitee w-[20px] h-[20px] text-center leading-5 text-[12px] rounded-full
+}

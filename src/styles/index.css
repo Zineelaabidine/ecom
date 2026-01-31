@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "../components/layout/styles/TopHeader.css";
+
+@theme {
+    --color-main: #0A84FF;
+    --color-p: #6B7280;
+    --color-bg: #F5F7FA;
+    --color-whitee: #FFFFFF;
+    --color-heading: #111827;
+    --color-border: #E5E7EB;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family: "Inter"; */
+    /* font-family: "DM Sans"; */
+    /* font-family: sans-serif */
+    font-family: sans-serif
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    @apply bg-[#fff];
+}
+
+img {
+    @apply w-full;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "DM Sans", "Inter";
+
+}
+p{
+    @apply text-p
+}
+a{
+    text-decoration: none;
+}
+input, button, select, textarea{
+    outline: none;
+    border: none;
+}
+a{
+    @apply no-underline text-heading;
+}
