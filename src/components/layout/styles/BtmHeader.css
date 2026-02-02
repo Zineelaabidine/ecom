@@ -1,0 +1,49 @@
+.btm-header{
+    @apply bg-main flex justify-center
+}
+.btm-header .container{
+    @apply flex items-center justify-between
+}
+.container .nav{
+    @apply flex items-center gap-12.5 h-12.5
+}
+
+.category-nav{
+ @apply w-55 h-full relative  
+}
+.category-nav-list{
+    @apply  max-h-100 absolute top-full left-0 w-full bg-whitee border-border border-solid border flex-col overflow-y-auto transition-all duration-200 ease-in-out 
+}
+.category-nav-list .category-nav-link{
+    @apply flex p-[14px_10px] border-b border-border text-[14px]
+}
+.category-nav .category-btn{
+    @apply h-full w-full flex justify-between items-center bg-main p-[0_15px] cursor-pointer text-whitee
+}
+
+.category-nav .category-btn svg{
+    @apply bg-main text-[15px] font-semibold fill-whitee
+}
+.nav .nav-links{
+    @apply h-full flex items-center p-[0_25px] gap-10
+}
+.nav .nav-links a{
+    @apply text-whitee h-full content-center px-3
+}
+.nav .nav-links .active{
+    @apply bg-[#0c6af7]
+}
+.category-nav-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.category-nav-list::-webkit-scrollbar-thumb {
+  background: var(--color-main); /* gray-400 */
+  border-radius: 8px;
+}
+.sign-regs-icon{
+    @apply flex gap-5 
+}
+.sign-regs-icon svg{
+    @apply fill-whitee text-xl
+}
