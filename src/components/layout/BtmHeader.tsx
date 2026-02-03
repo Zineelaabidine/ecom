@@ -2,15 +2,15 @@ import { IoMdMenu } from 'react-icons/io'
 import { MdOutlineArrowDropDown } from 'react-icons/md'
 import { useProductsCategories } from '../../hooks/useProductsCategories'
 import { Link, useLocation } from 'react-router-dom';
-import { PiSignInBold} from 'react-icons/pi';
+import { PiSignInBold } from 'react-icons/pi';
 import { FaUserPlus } from "react-icons/fa";
 import { useState } from 'react';
 
 const Navlinks = [
   { title: "Home", link: "/" },
-  { title: "About", link: "/about" },
   { title: "Accessories", link: "/accessories" },
   { title: "Blog", link: "/blog" },
+  { title: "About", link: "/about" },
   { title: "Contact", link: "/contact" },
 
 ]
@@ -23,25 +23,25 @@ export const BtmHeader = () => {
     <div className='btm-header'>
       <div className="container">
         <nav className="nav">
-          <div className="category-nav" onClick={()=>setIsCategoryOpen(!isCategoryOpen)}>
+          <div className="category-nav" onClick={() => setIsCategoryOpen(!isCategoryOpen)}>
             <div className={`category-btn`}>
               <IoMdMenu />
-               <span>Browse category</span>
-              <MdOutlineArrowDropDown />
+              <span>Browse category</span>
+              <MdOutlineArrowDropDown className={`${isCategoryOpen ? 'transition-transform duration-300 rotate-180' : ''}`} />
             </div>
-            {isCategoryOpen && (<div className="category-nav-list">
+            {isCategoryOpen && (<div className="category-nav-list z-10">
               {loading && <p>Loading...</p>}
               {error && <p>{error}</p>}
               {categories?.map(cat => <Link className='category-nav-link' to={`${cat.slug}`} key={`${cat.name}`}>{`${cat.name}`}</Link>)}
             </div>)}
           </div>
           <div className="nav-links">
-            { Navlinks.map(lnk => (<Link key={lnk.link} to= {`${lnk.link}`} className={`nav-link ${location.pathname === lnk.link ? "active" : ""}`}>{lnk.title}</Link>))}
+            {Navlinks.map(lnk => (<Link key={lnk.link} to={`${lnk.link}`} className={`nav-link ${location.pathname === lnk.link ? "active" : ""}`}>{lnk.title}</Link>))}
           </div>
         </nav>
         <div className="sign-regs-icon">
-          <Link to="/signup"><PiSignInBold/></Link>
-          <Link to="/login"><FaUserPlus/></Link>
+          <Link to="/signup"><PiSignInBold /></Link>
+          <Link to="/login"><FaUserPlus /></Link>
         </div>
       </div>
 
