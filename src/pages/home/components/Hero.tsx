@@ -1,3 +1,6 @@
+import banner1 from '../../../assets/banner_Hero1.jpg'
+import banner2 from '../../../assets/banner_Hero2.jpg';
+import banner3 from '../../../assets/banner_Hero3.jpg';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
@@ -26,7 +29,7 @@ export default function Hero() {
                 <p>Windows Xp/10/7/8 Ps3, Tv Box</p>
                 <Link to="/" className='main-btn'>Shop Now</Link>
               </div>
-              <img src="src/assets/banner_Hero1.jpg" alt="slider hero 1" />
+              <img src={banner1} alt="slider hero 1" />
             </SwiperSlide>
             <SwiperSlide>
               <div className="content">
@@ -35,7 +38,7 @@ export default function Hero() {
                 <p>Windows Xp/10/7/8 Ps3, Tv Box</p>
                 <Link to="/" className='main-btn'>Shop Now</Link>
               </div>
-              <img src="src/assets/banner_Hero2.jpg" alt="slider hero 2" />
+              <img src={banner2} alt="slider hero 2" />
             </SwiperSlide>
             <SwiperSlide>
               <div className="content">
@@ -44,7 +47,7 @@ export default function Hero() {
                 <p>Windows Xp/10/7/8 Ps3, Tv Box</p>
                 <Link to="/" className='main-btn'>Shop Now</Link>
               </div>
-              <img src="src/assets/banner_Hero3.jpg" alt="slider hero 3" />
+              <img src={banner3} alt="slider hero 3" />
             </SwiperSlide>
           </Swiper>
         </div>
