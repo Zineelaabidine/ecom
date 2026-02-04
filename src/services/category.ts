@@ -1,5 +1,5 @@
 import type { categoriesType } from "../types/category";
-
+ 
 export async function getProductsCategories(): Promise<categoriesType>{
     const response = await fetch('https://dummyjson.com/products/categories');
     if(!response.ok){
@@ -7,3 +7,4 @@ export async function getProductsCategories(): Promise<categoriesType>{
     }
     return response.json();
 }
+ 

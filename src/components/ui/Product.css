@@ -1,5 +1,6 @@
 .product-card {
-    width: calc(100%);
+    height: 330px;
+    width: 250px;
     border: 2px solid var(--color-border);
     background: var(--color-whitee);
     overflow: hidden;
@@ -83,9 +84,13 @@
     background: var(--color-gray-200);
     border-radius: 50%;
     padding: 6px;
+    transition: transform 0.2s ease-in-out ;
 }
 .product-card .img .icons svg{
     fill: var(--color-main);
+}
+.icons span:hover{
+    transform: scale(1.2);
 }
 
 .product-card:hover {

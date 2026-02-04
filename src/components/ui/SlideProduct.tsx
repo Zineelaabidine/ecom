@@ -1,7 +1,7 @@
-import React from 'react'
 import { Product } from './Product'
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useProducsByCateg } from '../../hooks/useProducsByCateg';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -15,20 +15,10 @@ interface Props {
   description: string
 }
 
-export const SlideProduct = ({title, description}: Props) => {
-  // Sample products data - replace with actual data
-  const products = [
-    { id: 1 },
-    { id: 2 },
-    { id: 3 },
-    { id: 4 },
-    { id: 5 },
-    { id: 6 },
-    { id: 7 },
-    { id: 8 },
-    { id: 9 },
-    { id: 10 },
-  ];
+export const SlideProduct = ({ title, description }: Props) => {
+  const { products, error, loading } = useProducsByCateg(title);
+  console.log(`products of the category ${title}:`)
+
 
   return (
     <div className='container h-[calc(100vh-150px)] justify-self-center flex flex-col justify-center '>
@@ -39,12 +29,12 @@ export const SlideProduct = ({title, description}: Props) => {
       {/* products slider */}
       <div className="products-slider ">
         <Swiper
-        style={{marginTop: "10px"}}
-        loop={true}
-        autoplay={{
+          style={{ marginTop: "10px" }}
+          loop={true}
+          autoplay={{
             delay: 2500,
-            disableOnInteraction: false,
-          }} 
+            disableOnInteraction: true,
+          }}
           pagination={{
             type: 'progressbar',
           }}
@@ -70,10 +60,18 @@ export const SlideProduct = ({title, description}: Props) => {
             },
           }}
         >
-          {products.map((product) => (
-            <SwiperSlide key={product.id} style={{height: "auto", paddingTop: "20px"}}>
+          {loading && (<p>loading products ...</p>)}
+          {error && <p>error: {error}</p>}
+          {products && products?.map((product) => (
+            <SwiperSlide key={product.id} style={{ height: "auto", paddingTop: "20px" }}>
               <div className="product-slide">
-                <Product />
+                <Product
+                  id={product.id}
+                  title={product.title}
+                  price={product.price}
+                  discountPercentage={product.discountPercentage}
+                  rating={product.rating}
+                  thumbnail={product.thumbnail} />
               </div>
             </SwiperSlide>
           ))}

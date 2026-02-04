@@ -1,13 +1,28 @@
 import React from 'react'
 import { FaStar, FaRegStarHalfStroke } from "react-icons/fa6";
-import { FaCartPlus , FaRegHeart, FaShare} from "react-icons/fa";
+import { FaCartPlus, FaRegHeart, FaShare } from "react-icons/fa";
+interface ProductProps {
+    id: number
+    title: string
+    price: number
+    discountPercentage: number
+    rating: number
+    thumbnail: string
+}
 
 import './Product.css'
-export const Product = () => {
+export const Product = ({
+    id,
+    title,
+    price,
+    discountPercentage,
+    rating,
+    thumbnail,
+}: ProductProps) => {
     return (
         <div className='product-card'>
             <div className="img">
-                <img src="https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" alt="" />
+                <img src={thumbnail} alt="" />
                 <div className="icons">
                     <span><FaCartPlus /></span>
                     <span><FaRegHeart /></span>
@@ -16,7 +31,7 @@ export const Product = () => {
             </div>
             <div className="product-card-content">
                 <div className="product-name">
-                    Realme C35
+                    {title}
                 </div>
                 <div className="product-rating">
                     <FaStar />
@@ -27,8 +42,8 @@ export const Product = () => {
 
                 </div>
                 <div className="product-price">
-                    <span className='price'>$ 145.99</span>
-                    <span className="discount"> $ 25</span>
+                    <span className='price'>$ {price}</span>
+                    <span className="discount"> $ {discountPercentage}</span>
                 </div>
 
             </div>

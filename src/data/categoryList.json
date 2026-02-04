@@ -1,0 +1,18 @@
+[
+  {
+    "title": "laptops",
+    "description": "Portable computers suitable for work, study, and everyday use."
+  },
+  {
+    "title": "mobile-accessories",
+    "description": "Accessories for smartphones such as chargers, cases, and headphones."
+  },
+  {
+    "title": "smartphones",
+    "description": "Modern mobile phones with advanced features, apps, and internet connectivity."
+  },
+  {
+    "title": "tablets",
+    "description": "Touchscreen devices ideal for browsing, media consumption, and light productivity."
+  }
+]
