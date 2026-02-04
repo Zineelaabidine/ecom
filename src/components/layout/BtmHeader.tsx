@@ -31,7 +31,7 @@ export const BtmHeader = () => {
             </div>
             {isCategoryOpen && (<div className="category-nav-list z-10">
               {loading && <p>Loading...</p>}
-              {error && <p>{error}</p>}
+              {error && <p>{error.message}</p>}
               {categories?.map(cat => <Link className='category-nav-link' to={`${cat.slug}`} key={`${cat.name}`}>{`${cat.name}`}</Link>)}
             </div>)}
           </div>

@@ -10,7 +10,13 @@ export const HomePage: React.FC = () => {
 
       <Hero />
       {/* products sliders */}
-      {categories?.map(cat => (<SlideProduct key={cat.title} title={cat.title} description={cat.description} />))
+      {categories?.map(cat => (
+        <div style={{paddingTop: "50px"}}>
+          <SlideProduct
+            key={cat.title}
+            title={cat.title}
+            description={cat.description} />
+        </div>))
 
       }
     </Layout>

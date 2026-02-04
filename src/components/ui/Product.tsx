@@ -1,6 +1,5 @@
-import React from 'react'
-import { FaStar, FaRegStarHalfStroke } from "react-icons/fa6";
-import { FaCartPlus, FaRegHeart, FaShare } from "react-icons/fa";
+ import { FaCartPlus, FaRegHeart, FaShare } from "react-icons/fa";
+import { renderStars } from '../../utils/renderStars';
 interface ProductProps {
     id: number
     title: string
@@ -12,8 +11,7 @@ interface ProductProps {
 
 import './Product.css'
 export const Product = ({
-    id,
-    title,
+     title,
     price,
     discountPercentage,
     rating,
@@ -34,12 +32,7 @@ export const Product = ({
                     {title}
                 </div>
                 <div className="product-rating">
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaRegStarHalfStroke />
-
+                 {renderStars(rating)}
                 </div>
                 <div className="product-price">
                     <span className='price'>$ {price}</span>

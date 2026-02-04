@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "../components/layout/styles/TopHeader.css";
 @import "../components/layout/styles/BtmHeader.css";
+@import "../components/layout/styles/Footer.css";
 
 @theme {
     --color-main: #0A84FF;
@@ -74,7 +75,6 @@ a{
     background: #446db8;
 }
 main{
-    height: 900vh;
 }
 html::-webkit-scrollbar {
   width: 8px;
