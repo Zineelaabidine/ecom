@@ -15,8 +15,12 @@
     @apply  max-h-100 absolute top-full left-0 w-full bg-whitee border-border border-solid border flex-col overflow-y-auto transition-all duration-200 ease-in-out 
 }
 .category-nav-list .category-nav-link{
-    @apply flex p-[14px_10px] border-b border-border text-[14px]
+    @apply flex p-[14px_10px] border-b border-border text-[14px] 
 }
+.category-nav-list .category-nav-link:hover{
+    @apply bg-gray-200
+}
+
 .category-nav .category-btn{
     @apply h-full w-full flex justify-between items-center bg-main p-[0_15px] cursor-pointer text-whitee
 }

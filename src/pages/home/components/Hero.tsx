@@ -1,6 +1,7 @@
 import banner1 from '../../../assets/banner_Hero1.jpg'
 import banner2 from '../../../assets/banner_Hero2.jpg';
 import banner3 from '../../../assets/banner_Hero3.jpg';
+import './Hero.css'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
