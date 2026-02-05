@@ -17,13 +17,12 @@ interface Props {
 
 export const SlideProduct = ({ title, description }: Props) => {
   const { products, error, loading } = useProducsByCateg(title);
-  console.log(`products of the category ${title}:`)
 
 
   return (
-    <div className='container h-[calc(100vh-150px)] justify-self-center flex flex-col justify-center '>
+    <div className='container h-[calc(100vh-200px)] justify-self-center flex flex-col justify-center '>
       <div className="title-desc ">
-        <h3 className='text-3xl text-main'>{title}</h3>
+        <h3 className='text-3xl text-main capitalize'>{title}</h3>
         <p>{description}</p>
       </div>
       {/* products slider */}

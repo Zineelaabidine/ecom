@@ -11,10 +11,10 @@ export const HomePage: React.FC = () => {
       <Hero />
       {/* products sliders */}
       {categories?.map(cat => (
-        <div style={{paddingTop: "50px"}}>
+        <div key={cat.title } style={{paddingTop: "80px"}}
+        >
           <SlideProduct
-            key={cat.title}
-            title={cat.title}
+            title={cat.title.replace("-", " ")}
             description={cat.description} />
         </div>))
 

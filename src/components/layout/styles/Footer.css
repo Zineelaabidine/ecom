@@ -50,11 +50,15 @@
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     transition: all 0.3s ease;
+    color: #0A84FF;
 }
-
+ .footer-social .social-icon svg {
+    color: #912222;
+    fill: var(--color-main);
+}
 .social-icon:hover {
-    background-color: #0A84FF;
     transform: translateY(-3px);
+    scale: 1.1;
 }
 
 .social-icon svg {

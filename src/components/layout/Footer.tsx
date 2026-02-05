@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/Footer.css';
 import { Link } from 'react-router-dom';
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 export const Footer: React.FC = () => {
   return (
@@ -17,21 +18,15 @@ export const Footer: React.FC = () => {
             </p>
             <div className="footer-social">
               <a href="#" className="social-icon" aria-label="Twitter">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-12.7 12.5 4.8-9.4 14-9.4 14 9.4-9.4-9.4-9.4 14 9.4 14 4.5-4.5 9.4-12.5 12.7-12.5 2 1.3 2 3.4 2 3.4"/>
-                </svg>
+               <FaTwitter />
+
               </a>
               <a href="#" className="social-icon" aria-label="Facebook">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                </svg>
+               <FaFacebook/>
               </a>
               <a href="#" className="social-icon" aria-label="Instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                </svg>
+                <FaInstagram />
+
               </a>
             </div>
           </div>
@@ -77,7 +72,7 @@ export const Footer: React.FC = () => {
 
         {/* Footer Bottom */}
         <div className="footer-bottom">
-          <p className="copyright">© 2024 ShopLogo. All rights reserved</p>
+          <p className="copyright">© {new Date().getFullYear()} ZineShop. All rights reserved</p>
           <div className="payment-methods">
             <span>Payment Methods:</span>
             <div className="payment-icons">

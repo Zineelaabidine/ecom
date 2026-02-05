@@ -28,7 +28,7 @@ export const Product = ({
                 </div>
             </div>
             <div className="product-card-content">
-                <div className="product-name">
+                <div className="product-name" title={title}>
                     {title}
                 </div>
                 <div className="product-rating">
