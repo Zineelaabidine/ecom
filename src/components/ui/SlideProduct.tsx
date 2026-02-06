@@ -2,7 +2,8 @@ import { Product } from './Product'
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useProducsByCateg } from '../../hooks/useProducsByCateg';
-
+import { generatePath } from '../../routes/config';
+import { Link } from 'react-router-dom';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -22,12 +23,12 @@ export const SlideProduct = ({ title, description }: Props) => {
   return (
     <div className='container h-[calc(100vh-200px)] justify-self-center flex flex-col justify-center '>
       <div className="title-desc ">
-        <h3 className='text-3xl text-main capitalize'>{title}</h3>
+        <h3 className='text-3xl text-main capitalize'>{title.replace("-", " ")}</h3>
         <p>{description}</p>
       </div>
       {/* products slider */}
       <div className="products-slider ">
-        <Swiper
+        {loading ? <div>loading...</div> : <Swiper
           style={{ marginTop: "10px" }}
           loop={true}
           autoplay={{
@@ -64,17 +65,20 @@ export const SlideProduct = ({ title, description }: Props) => {
           {products && products?.map((product) => (
             <SwiperSlide key={product.id} style={{ height: "auto", paddingTop: "20px" }}>
               <div className="product-slide">
-                <Product
-                  id={product.id}
-                  title={product.title}
-                  price={product.price}
-                  discountPercentage={product.discountPercentage}
-                  rating={product.rating}
-                  thumbnail={product.thumbnail} />
+                <Link to={generatePath.productDetails(product.id)}>
+                  <Product
+                    id={product.id}
+                    title={product.title}
+                    price={product.price}
+                    discountPercentage={product.discountPercentage}
+                    rating={product.rating}
+                    thumbnail={product.thumbnail} />
+                </Link>
+
               </div>
             </SwiperSlide>
           ))}
-        </Swiper>
+        </Swiper>}
       </div>
     </div>
   )

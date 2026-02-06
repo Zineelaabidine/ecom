@@ -1,12 +1,11 @@
-import { Layout } from "../../components/layout/Layout"
-import Hero from "./components/Hero"
+ import Hero from "./components/Hero"
 import { SlideProduct } from "../../components/ui/SlideProduct"
 import categories from "../../data/categoryList.json"
 export const HomePage: React.FC = () => {
 
   return (
 
-    <Layout>
+    <>
 
       <Hero />
       {/* products sliders */}
@@ -14,11 +13,11 @@ export const HomePage: React.FC = () => {
         <div key={cat.title } style={{paddingTop: "80px"}}
         >
           <SlideProduct
-            title={cat.title.replace("-", " ")}
+            title={cat.title}
             description={cat.description} />
         </div>))
 
       }
-    </Layout>
+    </>
   )
 }
