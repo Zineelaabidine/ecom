@@ -5,14 +5,14 @@ import type { ProductType } from "../../../types/Product";
 
 export function useProductById(id: number) {
     const [error, setError] = useState()
-    const [loading, setLoading] = useState<boolean>(true);
+    const [loading, setLoading] = useState<boolean>();
     const [product, setProduct] = useState<ProductType>();
     useEffect(() => {
+        setLoading(true)
         getProductDetailsById(id)
             .then(setProduct)
             .catch(err => setError(err.message))
             .finally(() => setLoading(false))
     }, [id])
-
-    return { product, error, loading }
+    return { product, images: product?.images, error, loading }
 }

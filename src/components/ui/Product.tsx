@@ -36,7 +36,7 @@ export const Product = ({
                 </div>
                 <div className="product-price">
                     <span className='price'>$ {price}</span>
-                    <span className="discount"> $ {discountPercentage}</span>
+                    <span className="discount line-through"> $ {discountPercentage}</span>
                 </div>
 
             </div>

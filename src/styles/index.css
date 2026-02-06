@@ -12,32 +12,42 @@
     --color-heading: #111827;
     --color-border: #E5E7EB;
 }
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    /* font-family: "Inter"; */
-    /* font-family: "DM Sans"; */
-    /* font-family: sans-serif */
-    font-family: sans-serif
+
+@layer base {
+   *,
+   *::before,
+   *::after {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+   }
+
+   html {
+     font-family: "Inter", "DM Sans", sans-serif;
+     @apply w-full
+   }
 }
 
 body {
-    font-family: "Inter", sans-serif;
-    @apply bg-[#fff];
+    @apply bg-whitee;
 }
 
 img {
     @apply w-full;
 }
-
+@theme{
+    --font-inter:"Inter", "DM Sans", sans-serif; 
+}
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-    font-family: "DM Sans", "Inter";
+h6,
+div,
+span,
+p, a {
+    @apply font-inter
 
 }
 p{
@@ -56,7 +66,6 @@ a{
 .main-btn{
     padding: 10px 18px;
     text-decoration: capitalize;
-    border-radius: 2px;
     cursor: pointer;
     background: var(--color-main);
     color: var(--color-white);
@@ -65,17 +74,26 @@ a{
     align-items: center;
     transition: 0.3s;
     width: max-content;
-    border-radius: 30px;
 }
-.main-btn:hover{
+.sec-btn{
+    color: var(--color-main);
+    border: 1px solid var(--color-main);
+    padding: 10px 18px;
+    transition: 0.3s;
+    @apply flex items-center justify-evenly font-bold cursor-pointer
+
+}
+.sec-btn:active{
+    scale: 1;
+}
+.main-btn:hover , .sec-btn:hover{
     scale: 1.1;
 }
 .main-btn:active{
     scale: 1;
     background: #446db8;
 }
-main{
-}
+
 html::-webkit-scrollbar {
   width: 8px;
 }

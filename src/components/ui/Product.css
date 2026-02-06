@@ -75,7 +75,6 @@
 .product-price .discount {
   font-size: 16px;
   color: #888;
-  text-decoration: var(--color-border);
 }
 .product-card .img .icons{
     position: absolute;

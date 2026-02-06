@@ -28,7 +28,7 @@ export default function Hero() {
                 <h4>Introducing the new</h4>
                 <h3>Microsoft Xbox <br /> 360 Controller</h3>
                 <p>Windows Xp/10/7/8 Ps3, Tv Box</p>
-                <Link to="/" className='main-btn'>Shop Now</Link>
+                <Link to="/" className='main-btn rounded-[30px]'>Shop Now</Link>
               </div>
               <img src={banner1} alt="slider hero 1" />
             </SwiperSlide>
@@ -37,7 +37,7 @@ export default function Hero() {
                 <h4>Introducing the new</h4>
                 <h3>Microsoft Xbox <br /> 360 Controller</h3>
                 <p>Windows Xp/10/7/8 Ps3, Tv Box</p>
-                <Link to="/" className='main-btn'>Shop Now</Link>
+                <Link to="/" className='main-btn rounded-[30px]'>Shop Now</Link>
               </div>
               <img src={banner2} alt="slider hero 2" />
             </SwiperSlide>
@@ -46,7 +46,7 @@ export default function Hero() {
                 <h4>Introducing the new</h4>
                 <h3>Microsoft Xbox <br /> 360 Controller</h3>
                 <p>Windows Xp/10/7/8 Ps3, Tv Box</p>
-                <Link to="/" className='main-btn'>Shop Now</Link>
+                <Link to="/" className='main-btn rounded-[30px]'>Shop Now</Link>
               </div>
               <img src={banner3} alt="slider hero 3" />
             </SwiperSlide>
