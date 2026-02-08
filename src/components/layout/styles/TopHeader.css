@@ -5,10 +5,10 @@
     @apply w-40
 }
 .search-box{
-   @apply w-125 flex items-center bg-bg border-solid border-main border rounded-[30px]
+   @apply w-full max-w-lg flex items-center bg-bg border-solid border-main border rounded-[30px] mx-4
 }
 .search{
-    @apply h-11.25 w-110 p-[5px_15px_5px_20px] bg-bg rounded-[30px_0_0_30px]
+    @apply h-11.25 w-full p-[5px_15px_5px_20px] bg-bg rounded-[30px_0_0_30px]
 }
 .search-box button{
     @apply h-11.25 w-15 bg-main flex cursor-pointer rounded-[0_30px_30px_0] justify-center items-center

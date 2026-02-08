@@ -2,14 +2,14 @@
     @apply bg-main flex justify-center
 }
 .btm-header .container{
-    @apply flex items-center justify-between
+    @apply flex justify-between items-center
 }
 .container .nav{
     @apply flex items-center gap-12.5 h-12.5
 }
 
 .category-nav{
- @apply w-55 h-full relative  
+ @apply  h-full relative
 }
 .category-nav-list{
     @apply  max-h-100 absolute top-full left-0 w-full bg-whitee border-border border-solid border flex-col overflow-y-auto transition-all duration-200 ease-in-out 
@@ -29,12 +29,12 @@
     @apply bg-main text-[15px] font-semibold fill-whitee
 }
 .nav .nav-links{
-    @apply h-full flex items-center p-[0_25px] gap-10
+    @apply h-full hidden lg:flex items-center p-[0_25px] gap-10
 }
 .nav .nav-links a{
     @apply text-whitee h-full content-center px-3
 }
-.nav .nav-links .active{
+.nav .nav-links .active, .container .close-button .mobile-nav .active{
     @apply bg-[#0c6af7]
 }
 .category-nav-list::-webkit-scrollbar {
@@ -46,7 +46,7 @@
   border-radius: 8px;
 }
 .sign-regs-icon{
-    @apply flex gap-5 
+    @apply hidden lg:flex gap-5 items-center
 }
 .sign-regs-icon svg{
     @apply fill-whitee text-xl
