@@ -46,7 +46,7 @@ export const BtmHeader = () => {
           <Link to="/signup"><PiSignInBold /></Link>
           <Link to="/login"><FaUserPlus /></Link>
         </div>
-        <div className="close-button absolute right-0 mr-3 z-[100] flex items-center text-white text-3xl lg:hidden">
+        <div className="close-button absolute right-0 mr-3 z-100 flex items-center text-white text-3xl lg:hidden">
 
           {/* Toggle button */}
           <div onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -63,7 +63,7 @@ export const BtmHeader = () => {
                       transition-all duration-500 ease-in-out
                       ${isMobileMenuOpen
                                 ? "max-h-[500px] opacity-100 scale-y-100"
-                                : "max-h-0 opacity-0 scale-y-95"
+                                : "max-h-0 opacity-0 scale-y-95 h-0"
                               }
                     `}
                           >
@@ -74,7 +74,7 @@ export const BtmHeader = () => {
                 style={{color: "white"}}
                   key={lnk.link}
                   to={lnk.link}
-                  className="mobile-nav-link border-b border-border py-2"
+                  className={`${isMobileMenuOpen ? "" : "hidden "} mobile-nav-link border-b border-border py-2`}
                 >
                   {lnk.title}
                 </Link>
@@ -86,7 +86,7 @@ export const BtmHeader = () => {
               className={`
                           flex flex-col gap-2 text-2xl w-full items-center pb-3
                           transition-opacity duration-300
-                          ${isMobileMenuOpen ? "opacity-100" : "opacity-0"}
+                          ${isMobileMenuOpen ? "opacity-100" : "opacity-0 hidden"}
                         `}
               >
               <Link

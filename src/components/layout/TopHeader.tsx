@@ -4,13 +4,13 @@ import { FaRegHeart, FaSearch } from "react-icons/fa"
 import { TiShoppingCart } from "react-icons/ti"
 import logo from "../../assets/logo.png"
 import { CartPanel } from "./CartPanel"
-
+import { useCart } from "../../context/cart/useCart"
 export const TopHeader = () => {
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false)
-
+  const { cartItems } = useCart();
   return (
-    <div className="top-header relative">
-      <div className="container">
+    <div className="top-header relative ">
+      <div className="container backdrop-blur-sm">
         <div className="w-40">
           <Link to="/"><img src={logo} alt="Logo" /></Link>
         </div>
@@ -36,7 +36,7 @@ export const TopHeader = () => {
             onClick={() => setIsCartOpen(true)}
           >
             <TiShoppingCart />
-            <span className="count">0</span>
+            <span className="count">{cartItems.length}</span>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
- import { FaCartPlus, FaRegHeart, FaShare } from "react-icons/fa";
+import { FaCartPlus, FaRegHeart, FaShare } from "react-icons/fa";
 import { renderStars } from '../../utils/renderStars';
 interface ProductProps {
     id: number
@@ -10,21 +10,35 @@ interface ProductProps {
 }
 
 import './Product.css'
+import { useCart } from "../../context/cart/useCart";
 export const Product = ({
-     title,
+    id,
+    title,
     price,
     discountPercentage,
     rating,
     thumbnail,
 }: ProductProps) => {
+    const { addToCart, removeFromCart, isItemInCart } = useCart();
     return (
         <div className='product-card'>
             <div className="img">
                 <img src={thumbnail} alt="" />
-                <div className="icons">
-                    <span><FaCartPlus /></span>
-                    <span><FaRegHeart /></span>
-                    <span><FaShare /></span>
+                <div className={`icons ${isItemInCart(id) ? "in-cart" : ""} z-10`}>
+                    <span onClick={(e) => {
+                         e.stopPropagation();
+                        e.preventDefault();
+                        if (isItemInCart(id)) {
+                            removeFromCart(id)
+                        } else {
+                            addToCart({ id, thumbnail, name: title, price, quantity: 1 })
+                        }
+
+                    }}>
+                        <FaCartPlus />
+                    </span>
+                    <span onClick={(e) => { e.stopPropagation() }}><FaRegHeart /></span>
+                    <span onClick={(e) => { e.stopPropagation() }}><FaShare /></span>
                 </div>
             </div>
             <div className="product-card-content">
@@ -32,7 +46,7 @@ export const Product = ({
                     {title}
                 </div>
                 <div className="product-rating">
-                 {renderStars(rating)}
+                    {renderStars(rating)}
                 </div>
                 <div className="product-price">
                     <span className='price'>$ {price}</span>

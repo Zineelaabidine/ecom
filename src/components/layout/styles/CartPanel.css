@@ -52,6 +52,17 @@
     font-size: x-large;
     font-weight: 600;
     color: var(--color-heading);
+    position: relative;
+}
+.cart-panel .cart-header h2 span{
+    position: absolute;
+    top: 0;
+    right: -20px;
+    background-color: var(--color-main);
+    color: var(--color-whitee);
+    padding: 0px 6px;
+    border-radius: 50%;
+    font-size: 14px;
 }
 .cart-panel .cart-body{
     padding: 15px;
@@ -139,7 +150,7 @@
 .cart-panel .cart-footer .BUTTONS{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
  
 

@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 export const Layout = () => {
   return (
     <div>
-         <header className=""><TopHeader/> <BtmHeader /></header>
+         <header className="sticky top-0 z-50"><TopHeader/> <BtmHeader /></header>
       <main>
         <Outlet/>
       </main>
