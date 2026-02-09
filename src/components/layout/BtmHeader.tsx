@@ -40,21 +40,69 @@ export const BtmHeader = () => {
           <div className="nav-links ">
             {Navlinks.map(lnk => (<Link key={lnk.link} to={`${lnk.link}`} className={`nav-link ${location.pathname === lnk.link ? "active" : ""}`}>{lnk.title}</Link>))}
           </div>
-          {/* mobile nav */}
 
         </nav>
         <div className="sign-regs-icon">
           <Link to="/signup"><PiSignInBold /></Link>
           <Link to="/login"><FaUserPlus /></Link>
         </div>
-        <div className="close-button absolute text-white right-0 text-3xl mr-3 z-100 items-center lg:hidden">
-          <div onClick={() => {setIsMobileMenuOpen(!isMobileMenuOpen)}}>{isMobileMenuOpen ? (<IoClose />) : (<IoMdMenu />)}</div>
-          <div className="mobile-nav flex text-lg text-center w-[200px] pb-1 z-10 justify-self-end lg:hidden absolute right-[-12px] bg-main min-w-1/2 justify-center top">
-            <div className={`mobile-nav-links flex flex-col gap-2 w-full ${!isMobileMenuOpen ? "hidden" : ""}`}>
-              {Navlinks.map(lnk => (<Link key={lnk.link} to={`${lnk.link}`} style={{ color: "white" }} className={`mobile-nav-link border-b border-border last:border-b-0 hover:bg-blue-500 h-full py-2 ${location.pathname === lnk.link ? "active" : ""}`}>{lnk.title}</Link>))}
+        <div className="close-button absolute right-0 mr-3 z-[100] flex items-center text-white text-3xl lg:hidden">
+
+          {/* Toggle button */}
+          <div onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? <IoClose /> : <IoMdMenu />}
+          </div>
+
+          {/* Mobile Menu */}
+          <div
+            className={`
+                      absolute right-[24px] top-full
+                      w-[200px] rounded-2xl
+                        bg-blue-600/50                     
+                      flex flex-col items-center
+                      transition-all duration-500 ease-in-out
+                      ${isMobileMenuOpen
+                                ? "max-h-[500px] opacity-100 scale-y-100"
+                                : "max-h-0 opacity-0 scale-y-95"
+                              }
+                    `}
+                          >
+            {/* Links */}
+            <div className="flex flex-col gap-2 w-[80%] text-lg text-center py-2">
+              {Navlinks.map((lnk) => (
+                <Link
+                style={{color: "white"}}
+                  key={lnk.link}
+                  to={lnk.link}
+                  className="mobile-nav-link border-b border-border py-2"
+                >
+                  {lnk.title}
+                </Link>
+              ))}
+            </div>
+
+            {/* Auth buttons */}
+            <div
+              className={`
+                          flex flex-col gap-2 text-2xl w-full items-center pb-3
+                          transition-opacity duration-300
+                          ${isMobileMenuOpen ? "opacity-100" : "opacity-0"}
+                        `}
+              >
+              <Link
+                to="/signup"
+                className="border-b border-border w-[80%] flex justify-center py-2"
+              >
+                <PiSignInBold className='text-whitee'/>
+              </Link>
+
+              <Link to="/login">
+                <FaUserPlus className='text-whitee'/>
+              </Link>
             </div>
           </div>
         </div>
+
 
       </div>
 
