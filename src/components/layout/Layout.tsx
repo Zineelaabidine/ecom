@@ -6,8 +6,7 @@ import { Outlet } from 'react-router-dom';
 export const Layout = () => {
   return (
     <div>
-         <header><TopHeader/> <BtmHeader /></header>
-
+         <header className=""><TopHeader/> <BtmHeader /></header>
       <main>
         <Outlet/>
       </main>
