@@ -7,9 +7,7 @@ import { Layout } from '../components/layout/Layout'
 import { HomePage } from '../pages/home/HomePage';
 import { ProductDetailsPage } from '../features/product/pages/ProductDetailsPage';
 import { ProductsByCategory } from '../features/product/pages/ProductsByCategory';
-// import { LoginPage } from '@/pages/auth/LoginPage';
-// import { ProfilePage } from '@/pages/profile/ProfilePage';
-// import { NotFoundPage } from '@/pages/NotFoundPage';
+import { NotFoundPage } from '../pages/not-found/NotFoundPage';
 
 export const AppRoutes = () => {
   return (
@@ -17,8 +15,9 @@ export const AppRoutes = () => {
       {/* Public Routes with Layout */}
       <Route element={<Layout />}>
         <Route path={ROUTES.HOME} element={<HomePage />} />
-        <Route path={ROUTES.PRODUCT_DETAILS} element={<ProductDetailsPage />}/>
-        <Route path={ROUTES.PRODUCTS_BY_CATEGORY} element={<ProductsByCategory />}/>
+        <Route path={ROUTES.PRODUCT_DETAILS} element={<ProductDetailsPage />} />
+        <Route path={ROUTES.PRODUCTS_BY_CATEGORY} element={<ProductsByCategory />} />
+        <Route path={ROUTES.NOT_FOUND} element={<NotFoundPage />} />
       </Route>
     </Routes>
   );

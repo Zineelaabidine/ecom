@@ -14,18 +14,19 @@
 }
 
 @layer base {
-   *,
-   *::before,
-   *::after {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-   }
 
-   html {
-     font-family: "Inter", "DM Sans", sans-serif;
-     @apply w-full
-   }
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-family: "Inter", "DM Sans", sans-serif;
+        @apply w-full
+    }
 }
 
 body {
@@ -35,9 +36,11 @@ body {
 img {
     @apply w-full;
 }
-@theme{
-    --font-inter:"Inter", "DM Sans", sans-serif; 
+
+@theme {
+    --font-inter: "Inter", "DM Sans", sans-serif;
 }
+
 h1,
 h2,
 h3,
@@ -46,59 +49,72 @@ h5,
 h6,
 div,
 span,
-p, a {
+p,
+a {
     @apply font-inter
-
 }
-p{
+
+p {
     @apply text-p
 }
-a{
+
+a {
     text-decoration: none;
 }
-input, button, select, textarea{
+
+input,
+button,
+select,
+textarea {
     outline: none;
     border: none;
 }
-a{
+
+a {
     @apply no-underline text-heading;
 }
-.main-btn{
+
+.main-btn {
     padding: 10px 18px;
     text-decoration: capitalize;
     cursor: pointer;
     background: var(--color-main);
-    color: var(--color-white);
+    color: var(--color-whitee);
     display: flex;
-    gap:10px;
+    gap: 10px;
     align-items: center;
     transition: 0.3s;
     width: max-content;
 }
-.sec-btn{
+
+.sec-btn {
     color: var(--color-main);
     border: 1px solid var(--color-main);
     padding: 10px 18px;
     transition: 0.3s;
     @apply flex items-center justify-evenly font-bold cursor-pointer
-
 }
-.sec-btn:active{
+
+.sec-btn:active {
     scale: 1;
 }
-.main-btn:hover , .sec-btn:hover{
+
+.main-btn:hover,
+.sec-btn:hover {
     scale: 1.1;
 }
-.main-btn:active{
+
+.main-btn:active {
     scale: 1;
     background: #446db8;
 }
 
 html::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 html::-webkit-scrollbar-thumb {
-  background: var(--color-main); /* gray-400 */
-  border-radius: 8px;
+    background: var(--color-main);
+    
+    border-radius: 8px;
 }

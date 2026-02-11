@@ -31,6 +31,9 @@ export const BtmHeader = () => {
               <IoMdMenu />
               <span>Browse category</span>
               <MdOutlineArrowDropDown className={`${isCategoryOpen ? 'transition-transform duration-300 rotate-180' : ''}`} />
+              {isCategoryOpen &&
+                <span className='fixed inset-0 cursor-default'/>
+              }
             </div>
             {isCategoryOpen && (<div className="category-nav-list z-10">
               {loading && <p>Loading...</p>}
@@ -63,16 +66,16 @@ export const BtmHeader = () => {
                       flex flex-col items-center
                       transition-all duration-500 ease-in-out
                       ${isMobileMenuOpen
-                                ? "max-h-[500px] opacity-100 scale-y-100"
-                                : "max-h-0 opacity-0 scale-y-95 h-0"
-                              }
+                ? "max-h-[500px] opacity-100 scale-y-100"
+                : "max-h-0 opacity-0 scale-y-95 h-0"
+              }
                     `}
-                          >
+          >
             {/* Links */}
             <div className="flex flex-col gap-2 w-[80%] text-lg text-center py-2">
               {Navlinks.map((lnk) => (
                 <Link
-                style={{color: "white"}}
+                  style={{ color: "white" }}
                   key={lnk.link}
                   to={lnk.link}
                   className={`${isMobileMenuOpen ? "" : "hidden "} mobile-nav-link border-b border-border py-2`}
@@ -89,16 +92,16 @@ export const BtmHeader = () => {
                           transition-opacity duration-300
                           ${isMobileMenuOpen ? "opacity-100" : "opacity-0 hidden"}
                         `}
-              >
+            >
               <Link
                 to="/signup"
                 className="border-b border-border w-[80%] flex justify-center py-2"
               >
-                <PiSignInBold className='text-whitee'/>
+                <PiSignInBold className='text-whitee' />
               </Link>
 
               <Link to="/login">
-                <FaUserPlus className='text-whitee'/>
+                <FaUserPlus className='text-whitee' />
               </Link>
             </div>
           </div>
