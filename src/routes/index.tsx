@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/HomePage';
 import { ProductDetailsPage } from '../features/product/pages/ProductDetailsPage';
 import { ProductsByCategory } from '../features/product/pages/ProductsByCategory';
 import { NotFoundPage } from '../pages/not-found/NotFoundPage';
+import { Search } from '../features/product/pages/Search';
 
 export const AppRoutes = () => {
   return (
@@ -17,6 +18,7 @@ export const AppRoutes = () => {
         <Route path={ROUTES.HOME} element={<HomePage />} />
         <Route path={ROUTES.PRODUCT_DETAILS} element={<ProductDetailsPage />} />
         <Route path={ROUTES.PRODUCTS_BY_CATEGORY} element={<ProductsByCategory />} />
+        <Route path={ROUTES.SEARCH} element={<Search />} />
         <Route path={ROUTES.NOT_FOUND} element={<NotFoundPage />} />
       </Route>
     </Routes>
