@@ -1,17 +1,22 @@
 import { TopHeader } from "./TopHeader";
-import {BtmHeader} from "./BtmHeader"
+import { BtmHeader } from "./BtmHeader"
 import { Footer } from "./Footer";
-import { Outlet } from 'react-router-dom';  
+import { Outlet } from 'react-router-dom';
 
 export const Layout = () => {
+  const handleScroll = () => {
+    console.log("scrolling")
+  }
+  window.addEventListener('scroll', handleScroll);
+
   return (
     <div>
-         <header className="sticky top-0 z-50"><TopHeader/> <BtmHeader /></header>
+      <header className="sticky top-0 z-50"><TopHeader /> <BtmHeader /></header>
       <main>
-        <Outlet/>
+        <Outlet />
       </main>
 
-      <footer><Footer/></footer>
+      <footer><Footer /></footer>
     </div>
   )
 }

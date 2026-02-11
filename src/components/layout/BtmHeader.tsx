@@ -6,6 +6,7 @@ import { PiSignInBold } from 'react-icons/pi';
 import { FaUserPlus } from "react-icons/fa";
 import { useState } from 'react';
 import { IoClose } from "react-icons/io5";
+import { generatePath } from '../../routes/config';
 
 const Navlinks = [
   { title: "Home", link: "/" },
@@ -34,7 +35,7 @@ export const BtmHeader = () => {
             {isCategoryOpen && (<div className="category-nav-list z-10">
               {loading && <p>Loading...</p>}
               {error && <p>{error.message}</p>}
-              {categories?.map(cat => <Link className='category-nav-link' to={`${cat.slug}`} key={`${cat.name}`}>{`${cat.name}`}</Link>)}
+              {categories?.map(cat => <Link className='category-nav-link' to={generatePath.productsByCategory(cat.slug)} key={`${cat.name}`}>{`${cat.name}`}</Link>)}
             </div>)}
           </div>
           <div className="nav-links ">

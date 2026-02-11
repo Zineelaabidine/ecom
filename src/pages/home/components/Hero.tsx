@@ -16,13 +16,13 @@ import { Link } from 'react-router-dom';
 export default function Hero() {
   return (
     <>
-      <div className="hero flex justify-center" style={{ marginTop: "50px" }}>
-        <div className="container ">
-          <Swiper loop={true} autoplay={{
+      <div className=" container hero flex justify-center justify-self-center" style={{ marginTop: "50px" }}>
+          <Swiper loop={true}
+           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
-          }} 
-          pagination={true} modules={[Pagination, Autoplay, Navigation]} className="mySwiper">
+          }}
+            pagination={true} modules={[Pagination, Autoplay, Navigation]} className="mySwiper">
             <SwiperSlide>
               <div className="content">
                 <h4>Introducing the new</h4>
@@ -30,7 +30,7 @@ export default function Hero() {
                 <p>Windows Xp/10/7/8 Ps3, Tv Box</p>
                 <Link to="/" className='main-btn rounded-[30px]'>Shop Now</Link>
               </div>
-              <img src={banner1} alt="slider hero 1" />
+              <div><img src={banner1} alt="slider hero 1" /></div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="content">
@@ -39,7 +39,9 @@ export default function Hero() {
                 <p>Windows Xp/10/7/8 Ps3, Tv Box</p>
                 <Link to="/" className='main-btn rounded-[30px]'>Shop Now</Link>
               </div>
-              <img src={banner2} alt="slider hero 2" />
+              <div>
+                <img src={banner2} alt="slider hero 2" />
+              </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="content">
@@ -48,11 +50,12 @@ export default function Hero() {
                 <p>Windows Xp/10/7/8 Ps3, Tv Box</p>
                 <Link to="/" className='main-btn rounded-[30px]'>Shop Now</Link>
               </div>
-              <img src={banner3} alt="slider hero 3" />
+              <div>
+                <img src={banner3} alt="slider hero 3" />
+              </div>
             </SwiperSlide>
           </Swiper>
         </div>
-      </div>
 
     </>
   );

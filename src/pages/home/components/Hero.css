@@ -1,19 +1,17 @@
-#app {
-  height: 100%;
-}
-
+ 
 
 .swiper {
   width: 100%;
   height: 100%;
 }
 
-
+.hero{
+  height: 60vh;
+}
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-height: 500px;
-  /* Center slide text vertically */
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +29,7 @@ height: 500px;
 }
 .swiper-slide .content h4{
     text-transform: uppercase;
-    font-size: 1vw;
+    font-size: 12px;
     font-style: italic;
     font-weight: normal;
     margin-bottom: 0.4vw;
@@ -45,7 +43,7 @@ height: 500px;
     line-height: 1.1;
 }
 .swiper-slide .content p{
-    font-size: 1.1vw;
+    font-size: 11px;
     margin-top: 2.5vw;
     margin-bottom: 2.5vw;
 }

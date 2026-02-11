@@ -6,6 +6,7 @@ import { Layout } from '../components/layout/Layout'
 // Pages
 import { HomePage } from '../pages/home/HomePage';
 import { ProductDetailsPage } from '../features/product/pages/ProductDetailsPage';
+import { ProductsByCategory } from '../features/product/pages/ProductsByCategory';
 // import { LoginPage } from '@/pages/auth/LoginPage';
 // import { ProfilePage } from '@/pages/profile/ProfilePage';
 // import { NotFoundPage } from '@/pages/NotFoundPage';
@@ -17,6 +18,7 @@ export const AppRoutes = () => {
       <Route element={<Layout />}>
         <Route path={ROUTES.HOME} element={<HomePage />} />
         <Route path={ROUTES.PRODUCT_DETAILS} element={<ProductDetailsPage />}/>
+        <Route path={ROUTES.PRODUCTS_BY_CATEGORY} element={<ProductsByCategory />}/>
       </Route>
     </Routes>
   );
