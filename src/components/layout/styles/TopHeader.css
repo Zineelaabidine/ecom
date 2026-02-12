@@ -5,7 +5,7 @@
     @apply w-40
 }
 .search-box{
-   @apply w-full max-w-lg flex items-center border-solid border-main border rounded-[30px] mx-4
+   @apply w-full relative max-w-lg flex items-center border-solid border-main border rounded-[30px] mx-4
 }
 .search{
     @apply h-11.25 w-full p-[5px_15px_5px_20px] rounded-[30px_0_0_30px] backdrop-blur-sm text-heading tracking-wide

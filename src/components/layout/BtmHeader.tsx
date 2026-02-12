@@ -27,12 +27,12 @@ export const BtmHeader = () => {
       <div className="container">
         <nav className="nav">
           <div className="category-nav" onClick={() => setIsCategoryOpen(!isCategoryOpen)}>
-            <div className={`category-btn`}>
+            <div className={`category-btn`} style={{ zIndex: "2" }}>
               <IoMdMenu />
               <span>Browse category</span>
               <MdOutlineArrowDropDown className={`${isCategoryOpen ? 'transition-transform duration-300 rotate-180' : ''}`} />
               {isCategoryOpen &&
-                <span className='fixed inset-0 cursor-default'/>
+                <span className='fixed inset-0 cursor-default' />
               }
             </div>
             {isCategoryOpen && (<div className="category-nav-list z-10">
