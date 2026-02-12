@@ -12,7 +12,8 @@ export const ProductsByCategory = () => {
     }, [category])
     return (
         <div className='container mx-auto pt-7'>
-            <h2 className='text-2xl text-main font-bold w-fit capitalize mx-auto sm:mx-14 md:mx-0 xl:mx-25'>{products ? products.length > 0 ? products?.length : 'No' : 'Loading '}  {category} Products</h2>
+            <h2 className='text-2xl text-main font-bold w-fit capitalize mx-auto sm:mx-14 md:mx-0 xl:mx-25'>
+                {products ? products.length > 0 ? '' : 'No ' : 'Loading '} {category} Products ({products?.length || '...'})</h2>
             <div className='mx-auto grid gap-6 py-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-self-center'>
                 {loading ?
                     <p>Loading...</p> : error ? <p>error: refresh the page</p> : products?.map((product) => (

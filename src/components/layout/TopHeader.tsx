@@ -5,9 +5,29 @@ import { TiShoppingCart } from "react-icons/ti"
 import logo from "../../assets/logo.png"
 import { CartPanel } from "./CartPanel"
 import { useCart } from "../../context/cart/useCart"
+// import { useSearchForProd } from "../../features/product/hooks/useSearchForProd"
+// import { useSearchParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import { generatePath } from "../../routes/config"
+
 export const TopHeader = () => {
+  // Search state for the form input
+  const [searchQuery, setSearchQuery] = useState<string>("")
+  const navigate = useNavigate()
+  // Cart state
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false)
   const { cartItems } = useCart();
+  // Search params in the URL
+
+
+
+
+
+  const handelSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    navigate(generatePath.search(searchQuery))
+  }
+
   return (
     <div className="top-header relative ">
       <div className="container backdrop-blur-sm">
@@ -15,11 +35,17 @@ export const TopHeader = () => {
           <Link to="/"><img src={logo} alt="Logo" /></Link>
         </div>
 
-        <form className="search-box">
+        <form className="search-box" onSubmit={(e) => handelSubmit(e)}>
           <input
+            autoComplete="off"
             type="text"
             className="search"
             placeholder="Search For Products"
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+
+            }}
           />
           <button type="submit"><FaSearch /></button>
         </form>
