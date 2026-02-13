@@ -57,7 +57,7 @@ export const TopHeader = () => {
               if (value.trim()) {
                 setIsSearchResultOpen(true);
               } else {
-                setIsSearchResultOpen(false); // ⚡ instant hide
+                setIsSearchResultOpen(false); 
               }
             }}
           />

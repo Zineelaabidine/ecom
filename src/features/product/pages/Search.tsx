@@ -11,7 +11,7 @@ export const Search = () => {
     return (
         <div className='container mx-auto pt-7'>
             <h2 className='text-2xl text-main font-bold w-fit capitalize mx-auto sm:mx-14 md:mx-0 xl:mx-25'>
-                {products ? products.length > 0 ? products?.length : 'No' : 'Loading '}   Products for: {param.get("q")}
+                {loading ? "loading..." : products ? products.length > 0 ? products?.length : 'No' : 'No'}   Products for: {param.get("q")}
             </h2>
             <div className='mx-auto min-h-screen grid gap-6 py-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-self-center'>
                 {loading ?
