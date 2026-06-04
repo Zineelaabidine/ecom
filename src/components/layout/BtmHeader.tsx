@@ -81,7 +81,7 @@ export const BtmHeader = () => {
             className={`
                       absolute right-[24px] top-full
                       w-[200px] rounded-2xl
-                        bg-blue-600/50                     
+                        bg-whitee border text-main                   
                       flex flex-col items-center
                       transition-all duration-500 ease-in-out
                       ${isMobileMenuOpen
@@ -91,13 +91,13 @@ export const BtmHeader = () => {
                     `}
           >
             {/* Links */}
-            <div className="flex flex-col gap-2 w-[80%] text-lg text-center py-2">
+            <div className="flex flex-col gap-2 w-[80%] text-lg text-center py-2 bg-whitee">
               {Navlinks.map((lnk) => (
                 <Link
-                  style={{ color: "white" }}
+                  style={{ color: "var(--color-main)" }}
                   key={lnk.link}
                   to={lnk.link}
-                  className={`${isMobileMenuOpen ? "" : "hidden "} mobile-nav-link border-b border-border py-2`}
+                  className={`${isMobileMenuOpen ? "" : "hidden "} mobile-nav-link border-b border-border py-2 `}
                 >
                   {lnk.title}
                 </Link>
@@ -116,11 +116,11 @@ export const BtmHeader = () => {
                 to="/signup"
                 className="border-b border-border w-[80%] flex justify-center py-2"
               >
-                <PiSignInBold className='text-whitee' />
+                <PiSignInBold className='text-main' />
               </Link>
 
               <Link to="/login">
-                <FaUserPlus className='text-whitee' />
+                <FaUserPlus className='text-main' />
               </Link>
             </div>
           </div>
