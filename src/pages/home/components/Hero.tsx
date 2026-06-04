@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 export default function Hero() {
   return (
     <>
-      <div className=" container hero flex justify-center justify-self-center" style={{ marginTop: "50px" }}>
+      <div className=" container hero flex justify-center justify-self-center" style={{ marginTop: "40px" }}>
           <Swiper loop={true}
            autoplay={{
             delay: 2500,
