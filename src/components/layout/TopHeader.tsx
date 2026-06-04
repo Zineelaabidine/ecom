@@ -37,7 +37,7 @@ export const TopHeader = () => {
   const { products, loading, error } = useSearchForProd(debouncedQuery)
 
   return (
-    <div className="top-header relative ">
+    <div className="top-header relative z-70 bg-white">
       <div className="container">
         <div className="w-40">
           <Link to="/"><img src={logo} alt="Logo" /></Link>

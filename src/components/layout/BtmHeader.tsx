@@ -4,9 +4,10 @@ import { useProductsCategories } from '../../hooks/useProductsCategories'
 import { Link, useLocation } from 'react-router-dom';
 import { PiSignInBold } from 'react-icons/pi';
 import { FaUserPlus } from "react-icons/fa";
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { IoClose } from "react-icons/io5";
 import { generatePath } from '../../routes/config';
+import { useScrollDirection } from '../../hooks/useScrollDirection';
 
 const Navlinks = [
   { title: "Home", link: "/" },
@@ -22,8 +23,26 @@ export const BtmHeader = () => {
   const [isCategoryOpen, setIsCategoryOpen] = useState<boolean>(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const location = useLocation();
+
+  const scrollDirection = useScrollDirection({ threshold: 10 })
+  const hasScrolled = useRef(false)
+
+  // Track whether user has scrolled at all, to skip initial transition-in
+  useEffect(() => {
+    if (!hasScrolled.current && scrollDirection !== null) {
+      hasScrolled.current = true
+    }
+  }, [scrollDirection])
+
+  const isBtmHeaderVisible = !hasScrolled.current || scrollDirection === 'up' || scrollDirection === null
+
   return (
-    <div className='btm-header'>
+    <div
+      className='btm-header'
+      style={{
+        transform: isBtmHeaderVisible ? 'translateY(0)' : 'translateY(-100%)',
+      }}
+    >
       <div className="container">
         <nav className="nav">
           <div className="category-nav" onClick={() => setIsCategoryOpen(!isCategoryOpen)}>

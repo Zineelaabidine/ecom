@@ -1,5 +1,6 @@
 .btm-header{
-    @apply bg-main flex justify-center
+    @apply bg-main flex justify-center;
+    transition: transform 0.3s ease-in-out;
 }
 .btm-header .container{
     @apply flex justify-between items-center
